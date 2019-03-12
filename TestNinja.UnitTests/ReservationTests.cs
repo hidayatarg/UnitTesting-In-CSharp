@@ -8,7 +8,7 @@ namespace TestNinja.UnitTests
     public class ReservationTests
     {
         [TestMethod]
-        public void CanBeCancelledBy_UserIsAdmin_ReturnsTrue()
+        public void CanBeCancelledBy_AdminCancelling_ReturnsTrue()
         {
             // Arrange (Prepare object we test)
             var reservation = new Reservation();
@@ -22,7 +22,7 @@ namespace TestNinja.UnitTests
         }
 
         [TestMethod]
-        public void CanBeCancelledBy_TheSameUserCancellingTheReservation_ReturnsTrue()
+        public void CanBeCancelledBy_SameUserCancelling_ReturnsTrue()
         {
             var user = new User();
             // Arrange
@@ -36,7 +36,7 @@ namespace TestNinja.UnitTests
         }
 
         [TestMethod]
-        public void CanBeCancelledBy_AnotherUserCancellingRerservation_ReturnsFalse()
+        public void CanBeCancelledBy_AnotherUserCancelling_ReturnsFalse()
         {
             // Arrange
             var reservation = new Reservation{MadeBy = new User()};
